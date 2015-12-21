@@ -30,6 +30,7 @@ const unsigned char *MicroOLED::fontsPointer[]={
 	,font8x16
 	,sevensegment
 	,fontlargenumber
+    ,fontStarWars
 	,space01
 	,space02
 	,space03
@@ -344,7 +345,9 @@ size_t MicroOLED::write(uint8_t c)
 		// skip
 	} else {
 		drawChar(cursorX, cursorY, c, foreColor, drawMode);
-		cursorX += fontWidth+1;
+		cursorX += fontWidth;
+        // Tight spacing for Star Wars font
+		//cursorX += fontWidth+1;
 		if ((cursorX > (LCDWIDTH - fontWidth))) {
 			cursorY += fontHeight;
 			cursorX = 0;

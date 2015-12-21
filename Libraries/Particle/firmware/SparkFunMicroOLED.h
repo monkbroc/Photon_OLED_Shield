@@ -21,6 +21,14 @@
 #include <stdint.h>
 #include "application.h"
 
+enum {
+  FONT_5x7,
+  FONT_8x16,
+  FONT_SEVEN_SEGMENT,
+  FONT_LARGE_NUMBER,
+  FONT_STAR_WARS,
+};
+
 #define swap(a, b) { uint8_t t = a; a = b; b = t; }
 #define _BV(x)	(1 << x)
 #define pgm_read_byte(x) (*(x))
